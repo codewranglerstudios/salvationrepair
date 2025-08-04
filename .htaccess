@@ -1,0 +1,147 @@
+
+
+### marker DROPQS start ###
+CacheKeyModify -qs:fbclid
+CacheKeyModify -qs:gclid
+CacheKeyModify -qs:utm*
+CacheKeyModify -qs:_ga
+### marker DROPQS end ###
+
+</IfModule>
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+# END LSCACHE
+# BEGIN NON_LSCACHE
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+# END NON_LSCACHE
+
+# Disable directory listing
+Options All -Indexes
+
+# Remove header with PHP version
+Header always unset X-Powered-By
+Header unset X-Powered-By
+# END Security Block
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# Allow Googlebot (by user agent)
+SetEnvIfNoCase User-Agent "Googlebot" allow_googlebot
+
+Order deny,allow
+Allow from env=allow_googlebot
+
+# END WordPress
+Deny from 41.220.135.17
+Deny from 103.170.185.100 
+Deny from 85.163.113.90
+Deny from 162.128.175.200
+Deny from 98.83.178.66
+Deny from 216.73.216.36
+Deny from 136.243.228.193
+Deny from 216.244.66.241
+Deny from 51.222.253.7
+Deny from 3.223.134.5 
+Deny from 44.218.6.93 
+Deny from 44.209.35.147
+Deny from 52.7.33.248
+Deny from 54.225.181.161 
+Deny from 52.0.105.244
+Deny from 3.230.69.161
+Deny from 119.12.169.77
+Deny from 34.231.156.59
+Deny from 40.116.89.17
+#fb
+Deny from 31.13.115.2
+Deny from 31.13.115.114
+Deny from 31.13.127.11
+Deny from 57.141.2
+#deny pinterest
+Deny from 54.236.1.11
+Deny from 54.236.1.13
+Deny from 54.236.1.
+#deny semrush
+Deny from 185.191.171
+Deny from 85.208.96.200
+Deny from 885.208.96.208
+Deny from 85.208.96.
+
+# --- Block IP ranges for specific countries ---
+# Country: Ukraine (UA)
+Deny from 5.149.0.0/16
+Deny from 37.57.0.0/16
+Deny from 91.207.0.0/16
+# Additional Ukraine IP ranges...
+
+# Country: China (CN)
+Deny from 36.96.0.0/12
+Deny from 112.64.0.0/14
+Deny from 183.136.0.0/13
+deny from  43.156.0.0/16
+# Additional China IP ranges...
+Deny from 101.44.66.
+# Country: Iran (IR)
+Deny from 2.144.0.0/13
+Deny from 5.114.0.0/15
+Deny from 151.245.0.0/16
+# Additional Iran IP ranges...
+
+# Country: Iraq (IQ)
+Deny from 5.63.0.0/16
+Deny from 31.25.0.0/16
+Deny from 185.84.0.0/22
+# Additional Iraq IP ranges...
+
+# Country: Taiwan (TW)
+Deny from 61.220.0.0/14
+Deny from 61.224.0.0/12
+Deny from 118.160.0.0/11
+# Additional Taiwan IP ranges...
+
+# Country: Denmark (DK)
+Deny from 80.240.0.0/13
+Deny from 91.200.0.0/13
+# (These are sample ranges; verify with current data sources)
+
+# Country: India (IN)
+Deny from 14.139.0.0/16
+Deny from 49.32.0.0/12
+Deny from 103.14.0.0/16
+Deny from 103.242.64.0/18
+# (These sample ranges cover portions of India’s IP space)
+
+# Country: France (FR)
+Deny from 5.39.0.0/16
+Deny from 62.210.0.0/15
+Deny from 80.12.0.0/16
+# (Additional France IP ranges may be added as needed)
+
+# Country: Malaysia (MY)
+Deny from 43.240.0.0/13
+Deny from 103.25.0.0/16
+Deny from 175.144.0.0/13
+# (These ranges represent sample allocations for Malaysia)
+
+# Country: Singapore (SG)
+Deny from 101.100.0.0/16
+Deny from 101.32.242.0/16
+Deny from 103.3.76.0/22
+Deny from 116.12.0.0/14
+Deny from 118.200.0.0/13
+Deny from 203.116.0.0/16
+Deny from 43.134.0.0/16
+Deny from 129.226.0.0/16
+Deny from 188.239.11.15
+Deny from 47.128.0.0/16
+Deny from 124.243.185.61
